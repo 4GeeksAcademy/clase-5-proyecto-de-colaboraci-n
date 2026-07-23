@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito | E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="overflow-x-hidden bg-slate-50 text-slate-900 antialiased">
+    <header class="border-b border-slate-200 bg-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between py-4">
+          <a href="index.html" class="text-lg font-black tracking-tight text-slate-900">E-commerce</a>
+          <button
+            type="button"
+            class="inline-flex items-center rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-700 sm:hidden"
+            aria-label="Abrir menu de navegacion"
+          >
+            Menu
+          </button>
+          <nav aria-label="Navegacion principal" class="hidden sm:block">
+            <ul class="flex items-center gap-6 text-sm font-medium text-slate-700">
+              <li><a href="index.html" class="transition hover:text-slate-900">Inicio</a></li>
+              <li><a href="#productos" class="transition hover:text-slate-900">Productos</a></li>
+              <li><a href="#carrito" class="font-semibold text-slate-900">Carrito</a></li>
+              <li><a href="#contacto" class="transition hover:text-slate-900">Contacto</a></li>
+            </ul>
+          </nav>
+        </div>
+        <nav aria-label="Navegacion movil" class="pb-4 sm:hidden">
+          <ul class="grid grid-cols-2 gap-2 text-sm font-medium text-slate-700">
+            <li><a href="index.html" class="block rounded-lg border border-slate-200 bg-slate-100 px-3 py-2 text-center">Inicio</a></li>
+            <li><a href="#productos" class="block rounded-lg border border-slate-200 bg-slate-100 px-3 py-2 text-center">Productos</a></li>
+            <li><a href="#carrito" class="block rounded-lg border border-slate-200 bg-slate-900 px-3 py-2 text-center text-white">Carrito</a></li>
+            <li><a href="#contacto" class="block rounded-lg border border-slate-200 bg-slate-100 px-3 py-2 text-center">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="carrito" class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+      <h1 class="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">Tu carrito</h1>
+      <p class="mt-2 text-sm text-slate-600">Revisa tus productos antes de completar la compra.</p>
+
+      <div class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <section aria-labelledby="listado-productos" class="lg:col-span-2">
+          <div class="rounded-2xl border border-slate-200 bg-white shadow-sm">
+            <div class="border-b border-slate-200 px-5 py-4 sm:px-6">
+              <h2 id="listado-productos" class="text-lg font-bold text-slate-900">Listado de productos</h2>
+            </div>
+
+            <ul class="divide-y divide-slate-200">
+              <li class="flex flex-col gap-4 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+                <div>
+                  <h3 class="font-semibold text-slate-900">Camiseta clasica</h3>
+                  <p class="mt-1 text-sm text-slate-600">Talla M · Color blanco</p>
+                </div>
+                <div class="flex items-center justify-between gap-4 sm:justify-end">
+                  <p class="text-sm text-slate-600">Cant: 1</p>
+                  <p class="font-semibold text-slate-900">$24.99</p>
+                </div>
+              </li>
+
+              <li class="flex flex-col gap-4 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+                <div>
+                  <h3 class="font-semibold text-slate-900">Zapatillas urbanas</h3>
+                  <p class="mt-1 text-sm text-slate-600">Talla 42 · Color negro</p>
+                </div>
+                <div class="flex items-center justify-between gap-4 sm:justify-end">
+                  <p class="text-sm text-slate-600">Cant: 1</p>
+                  <p class="font-semibold text-slate-900">$69.99</p>
+                </div>
+              </li>
+
+              <li class="flex flex-col gap-4 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+                <div>
+                  <h3 class="font-semibold text-slate-900">Mochila minimal</h3>
+                  <p class="mt-1 text-sm text-slate-600">Capacidad 20L · Azul</p>
+                </div>
+                <div class="flex items-center justify-between gap-4 sm:justify-end">
+                  <p class="text-sm text-slate-600">Cant: 2</p>
+                  <p class="font-semibold text-slate-900">$59.98</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <aside aria-labelledby="resumen-compra" class="lg:col-span-1">
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+            <h2 id="resumen-compra" class="text-lg font-bold text-slate-900">Resumen de compra</h2>
+
+            <dl class="mt-5 space-y-3 text-sm">
+              <div class="flex items-center justify-between">
+                <dt class="text-slate-600">Subtotal</dt>
+                <dd class="font-medium text-slate-900">$154.96</dd>
+              </div>
+              <div class="flex items-center justify-between">
+                <dt class="text-slate-600">Envio</dt>
+                <dd class="font-medium text-slate-900">$6.00</dd>
+              </div>
+              <div class="flex items-center justify-between">
+                <dt class="text-slate-600">Descuento</dt>
+                <dd class="font-medium text-emerald-700">-$10.00</dd>
+              </div>
+              <div class="border-t border-slate-200 pt-3">
+                <div class="flex items-center justify-between">
+                  <dt class="text-base font-bold text-slate-900">Total</dt>
+                  <dd class="text-base font-bold text-slate-900">$150.96</dd>
+                </div>
+              </div>
+            </dl>
+
+            <a
+              href="#"
+              class="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+            >
+              Finalizar compra
+            </a>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer id="contacto" class="mt-10 border-t border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+        <p>&copy; 2026 E-commerce. Todos los derechos reservados.</p>
+        <p>Soporte: contacto@ecommerce.com</p>
+      </div>
+    </footer>
+  </body>
+</html>
