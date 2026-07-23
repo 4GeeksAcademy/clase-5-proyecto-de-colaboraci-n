@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased">
+    <header class="border-b border-slate-200 bg-white">
+      <nav class="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-4 sm:px-6 lg:px-8" aria-label="Navegacion principal">
+        <a href="index.html" class="text-xl font-black tracking-tight text-slate-900">NovaShop</a>
+
+        <ul class="flex flex-wrap items-center gap-2 text-sm font-medium text-slate-700 sm:gap-4">
+          <li><a href="catalogo.html" class="rounded-full px-3 py-2 transition hover:bg-slate-100">Catalogo</a></li>
+          <li><a href="#" class="rounded-full px-3 py-2 transition hover:bg-slate-100">Cuenta</a></li>
+          <li>
+            <a href="carrito.html" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-3 py-2 transition hover:bg-slate-100">
+              Carrito
+              <span class="inline-flex min-w-6 items-center justify-center rounded-full bg-cyan-600 px-2 py-0.5 text-xs font-semibold text-white">3</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <a href="carrito.html" class="inline-flex items-center text-sm font-semibold text-cyan-700 hover:text-cyan-800">&larr; Volver al carrito</a>
+
+      <section class="mt-5">
+        <h1 class="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">Finalizar compra</h1>
+        <p class="mt-2 max-w-2xl text-sm text-slate-600 sm:text-base">
+          Completa los tres pasos para confirmar tu pedido: datos personales, direccion de entrega y pago con tarjeta.
+        </p>
+      </section>
+
+      <section class="mt-6" aria-label="Progreso de checkout">
+        <ol class="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
+          <li class="rounded-2xl border border-cyan-200 bg-cyan-50 p-4">
+            <p class="text-xs font-semibold uppercase tracking-wide text-cyan-700">Paso 1</p>
+            <p class="mt-1 text-sm font-bold text-slate-900">Datos personales</p>
+          </li>
+          <li class="rounded-2xl border border-slate-200 bg-white p-4">
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Paso 2</p>
+            <p class="mt-1 text-sm font-bold text-slate-900">Direccion de entrega</p>
+          </li>
+          <li class="rounded-2xl border border-slate-200 bg-white p-4">
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Paso 3</p>
+            <p class="mt-1 text-sm font-bold text-slate-900">Pago con tarjeta</p>
+          </li>
+        </ol>
+      </section>
+
+      <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <section class="lg:col-span-2">
+          <form class="space-y-6" action="#" method="post">
+            <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+              <fieldset class="space-y-5">
+                <legend class="text-lg font-extrabold text-slate-900">1. Datos personales</legend>
+
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div>
+                    <label for="nombre" class="mb-1 block text-sm font-medium text-slate-700">Nombre</label>
+                    <input
+                      id="nombre"
+                      name="nombre"
+                      type="text"
+                      required
+                      autocomplete="given-name"
+                      class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm transition hover:border-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus-visible:ring-2 focus-visible:ring-cyan-300 invalid:border-red-500 invalid:text-red-700 focus:invalid:border-red-500 focus:invalid:ring-red-200"
+                    />
+                  </div>
+                  <div>
+                    <label for="apellidos" class="mb-1 block text-sm font-medium text-slate-700">Apellidos</label>
+                    <input
+                      id="apellidos"
+                      name="apellidos"
+                      type="text"
+                      required
+                      autocomplete="family-name"
+                      class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm transition hover:border-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus-visible:ring-2 focus-visible:ring-cyan-300 invalid:border-red-500 invalid:text-red-700 focus:invalid:border-red-500 focus:invalid:ring-red-200"
+                    />
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 gap-4">
+                  <div>
+                    <label for="email" class="mb-1 block text-sm font-medium text-slate-700">Correo electronico</label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      autocomplete="email"
+                      aria-describedby="email-ayuda"
+                      class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm transition hover:border-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus-visible:ring-2 focus-visible:ring-cyan-300 invalid:border-red-500 invalid:text-red-700 focus:invalid:border-red-500 focus:invalid:ring-red-200"
+                    />
+                    <p id="email-ayuda" class="mt-1 text-xs text-slate-500">Usa el mismo correo donde recibiras la confirmacion del pedido.</p>
+                  </div>
+                  <div>
+                    <label for="telefono" class="mb-1 block text-sm font-medium text-slate-700">Telefono</label>
+                    <input
+                      id="telefono"
+                      name="telefono"
+                      type="tel"
+                      required
+                      autocomplete="tel"
+                      aria-describedby="telefono-ayuda"
+                      class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm transition hover:border-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus-visible:ring-2 focus-visible:ring-cyan-300 invalid:border-red-500 invalid:text-red-700 focus:invalid:border-red-500 focus:invalid:ring-red-200"
+                    />
+                    <p id="telefono-ayuda" class="mt-1 text-xs text-slate-500">Incluye codigo de area para facilitar la entrega.</p>
+                  </div>
+                </div>
+              </fieldset>
+            </section>
+
+            <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+              <fieldset class="space-y-5">
+                <legend class="text-lg font-extrabold text-slate-900">2. Dirección de entrega</legend>
+
+                <div>
+                  <label for="calle" class="mb-1 block text-sm font-medium text-slate-700">Calle</label>
+                  <input
+                    id="calle"
+                    name="calle"
+                    type="text"
+                    required
+                    autocomplete="address-line1"
+                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm transition hover:border-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus-visible:ring-2 focus-visible:ring-cyan-300 invalid:border-red-500 invalid:text-red-700 focus:invalid:border-red-500 focus:invalid:ring-red-200"
+                  />
+                </div>
+
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  <div>
+                    <label for="numero-exterior" class="mb-1 block text-sm font-medium text-slate-700">Numero exterior</label>
+                    <input
+                      id="numero-exterior"
+                      name="numero_exterior"
+                      type="text"
+                      required
+                      class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm transition hover:border-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus-visible:ring-2 focus-visible:ring-cyan-300 invalid:border-red-500 invalid:text-red-700 focus:invalid:border-red-500 focus:invalid:ring-red-200"
+                    />
+                  </div>
+                  <div>
+                    <label for="numero-interior" class="mb-1 block text-sm font-medium text-slate-700">Numero interior (opcional)</label>
+                    <input
+                      id="numero-interior"
+                      name="numero_interior"
+                      type="text"
+                      autocomplete="address-line2"
+                      class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm transition hover:border-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus-visible:ring-2 focus-visible:ring-cyan-300"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="colonia" class="mb-1 block text-sm font-medium text-slate-700">Colonia</label>
+                  <input
+                    id="colonia"
+                    name="colonia"
+                    type="text"
+                    required
+                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm transition hover:border-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus-visible:ring-2 focus-visible:ring-cyan-300 invalid:border-red-500 invalid:text-red-700 focus:invalid:border-red-500 focus:invalid:ring-red-200"
+                  />
+                </div>
+
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  <div>
+                    <label for="ciudad" class="mb-1 block text-sm font-medium text-slate-700">Ciudad o municipio</label>
+                    <input
+                      id="ciudad"
+                      name="ciudad"
+                      type="text"
+                      required
+                      autocomplete="address-level2"
+                      class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm transition hover:border-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus-visible:ring-2 focus-visible:ring-cyan-300 invalid:border-red-500 invalid:text-red-700 focus:invalid:border-red-500 focus:invalid:ring-red-200"
+                    />
+                  </div>
+                  <div>
+                    <label for="estado" class="mb-1 block text-sm font-medium text-slate-700">Estado</label>
+                    <select
+                      id="estado"
+                      name="estado"
+                      required
+                      autocomplete="address-level1"
+                      class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm transition hover:border-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus-visible:ring-2 focus-visible:ring-cyan-300 invalid:border-red-500 focus:invalid:border-red-500 focus:invalid:ring-red-200"
+                    >
+                      <option value="">Selecciona un estado</option>
+                      <option>Ciudad de Mexico</option>
+                      <option>Jalisco</option>
+                      <option>Nuevo Leon</option>
+                      <option>Puebla</option>
+                      <option>Yucatan</option>
+                      <option>Veracruz</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  <div>
+                    <label for="cp" class="mb-1 block text-sm font-medium text-slate-700">Codigo postal</label>
+                    <input
+                      id="cp"
+                      name="cp"
+                      type="text"
+                      required
+                      autocomplete="postal-code"
+                      inputmode="numeric"
+                      class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm transition hover:border-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus-visible:ring-2 focus-visible:ring-cyan-300 invalid:border-red-500 invalid:text-red-700 focus:invalid:border-red-500 focus:invalid:ring-red-200"
+                    />
+                  </div>
+                  <div>
+                    <label for="pais" class="mb-1 block text-sm font-medium text-slate-700">Pais</label>
+                    <select
+                      id="pais"
+                      name="pais"
+                      required
+                      autocomplete="country-name"
+                      class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm transition hover:border-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus-visible:ring-2 focus-visible:ring-cyan-300 invalid:border-red-500 focus:invalid:border-red-500 focus:invalid:ring-red-200"
+                    >
+                      <option selected>Mexico</option>
+                      <option>Colombia</option>
+                      <option>Argentina</option>
+                      <option>Chile</option>
+                      <option>Peru</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="pt-1">
+                  <label for="guardar-direccion" class="inline-flex items-start gap-3 text-sm text-slate-700">
+                    <input id="guardar-direccion" name="guardar_direccion" type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-cyan-600 focus:ring-2 focus:ring-cyan-200 focus:ring-offset-0" />
+                    <span>Guardar esta dirección para futuras compras</span>
+                  </label>
+                </div>
+              </fieldset>
+            </section>
+
+            <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+              <fieldset class="space-y-5">
+                <legend class="text-lg font-extrabold text-slate-900">3. Pago con tarjeta</legend>
+
+                <div>
+                  <label for="titular" class="mb-1 block text-sm font-medium text-slate-700">Nombre del titular</label>
+                  <input
+                    id="titular"
+                    name="titular"
+                    type="text"
+                    required
+                    autocomplete="cc-name"
+                    placeholder="Como aparece en la tarjeta"
+                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm transition hover:border-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus-visible:ring-2 focus-visible:ring-cyan-300 invalid:border-red-500 invalid:text-red-700 focus:invalid:border-red-500 focus:invalid:ring-red-200"
+                  />
+                </div>
+
+                <div>
+                  <label for="tarjeta" class="mb-1 block text-sm font-medium text-slate-700">Numero de tarjeta</label>
+                  <input
+                    id="tarjeta"
+                    name="tarjeta"
+                    type="text"
+                    required
+                    autocomplete="cc-number"
+                    inputmode="numeric"
+                    maxlength="19"
+                    placeholder="1234 5678 9012 3456"
+                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm transition hover:border-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus-visible:ring-2 focus-visible:ring-cyan-300 invalid:border-red-500 invalid:text-red-700 focus:invalid:border-red-500 focus:invalid:ring-red-200"
+                  />
+                </div>
+
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  <div>
+                    <label for="expira" class="mb-1 block text-sm font-medium text-slate-700">Fecha de vencimiento</label>
+                    <input
+                      id="expira"
+                      name="expira"
+                      type="text"
+                      required
+                      autocomplete="cc-exp"
+                      placeholder="MM/AA"
+                      class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm transition hover:border-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus-visible:ring-2 focus-visible:ring-cyan-300 invalid:border-red-500 invalid:text-red-700 focus:invalid:border-red-500 focus:invalid:ring-red-200"
+                    />
+                  </div>
+                  <div>
+                    <label for="cvv" class="mb-1 block text-sm font-medium text-slate-700">Codigo de seguridad CVV</label>
+                    <input
+                      id="cvv"
+                      name="cvv"
+                      type="text"
+                      required
+                      autocomplete="cc-csc"
+                      inputmode="numeric"
+                      maxlength="4"
+                      placeholder="123"
+                      class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm transition hover:border-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus-visible:ring-2 focus-visible:ring-cyan-300 invalid:border-red-500 invalid:text-red-700 focus:invalid:border-red-500 focus:invalid:ring-red-200"
+                    />
+                  </div>
+                </div>
+
+                <p class="text-xs text-slate-500 sm:text-sm">
+                  Tu informacion de pago se procesa de forma segura. Esta interfaz es solo visual y no almacena datos bancarios.
+                </p>
+              </fieldset>
+            </section>
+
+            <section class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+              <div class="space-y-4">
+                <label for="acepta-terminos" class="inline-flex items-start gap-3 text-sm text-slate-700">
+                  <input
+                    id="acepta-terminos"
+                    name="acepta_terminos"
+                    type="checkbox"
+                    required
+                    class="mt-0.5 h-4 w-4 rounded border-slate-300 text-cyan-600 focus:ring-2 focus:ring-cyan-200 focus:ring-offset-0"
+                  />
+                  <span>
+                    Acepto los
+                    <a href="#" class="font-semibold text-cyan-700 underline underline-offset-2 hover:text-cyan-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">Terminos y condiciones</a>
+                    y la
+                    <a href="#" class="font-semibold text-cyan-700 underline underline-offset-2 hover:text-cyan-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">Politica de privacidad</a>.
+                  </span>
+                </label>
+
+                <button
+                  type="submit"
+                  class="w-full rounded-xl bg-cyan-600 px-4 py-3.5 text-base font-extrabold text-white transition hover:bg-cyan-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:bg-slate-300"
+                >
+                  Realizar pago
+                </button>
+
+                <a href="carrito.html" class="inline-flex text-sm font-semibold text-cyan-700 hover:text-cyan-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
+                  Volver al carrito
+                </a>
+              </div>
+            </section>
+          </form>
+        </section>
+
+        <aside class="h-fit rounded-2xl border border-slate-200 bg-white p-5 sm:p-6" aria-label="Resumen del pedido">
+          <h2 class="text-lg font-extrabold text-slate-900">Resumen del pedido</h2>
+
+          <ul class="mt-4 space-y-3 text-sm text-slate-700">
+            <li class="flex items-start justify-between gap-3">
+              <span>Tenis Urban Pulse x1</span>
+              <span class="font-semibold">$79.99</span>
+            </li>
+            <li class="flex items-start justify-between gap-3">
+              <span>Camisa Linen Flow x2</span>
+              <span class="font-semibold">$89.00</span>
+            </li>
+            <li class="flex items-start justify-between gap-3">
+              <span>Envio estandar</span>
+              <span class="font-semibold">$6.50</span>
+            </li>
+          </ul>
+
+          <div class="my-4 border-t border-slate-200"></div>
+
+          <dl class="space-y-2 text-sm">
+            <div class="flex items-center justify-between text-slate-600">
+              <dt>Subtotal</dt>
+              <dd>$168.99</dd>
+            </div>
+            <div class="flex items-center justify-between text-slate-600">
+              <dt>Impuestos</dt>
+              <dd>$13.52</dd>
+            </div>
+            <div class="flex items-center justify-between text-base font-extrabold text-slate-900">
+              <dt>Total</dt>
+              <dd>$182.51</dd>
+            </div>
+          </dl>
+
+          <p class="mt-4 text-xs text-slate-500">Entrega estimada: entre 2 y 4 dias habiles.</p>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="mt-12 border-t border-slate-200 bg-white">
+      <div class="mx-auto w-full max-w-7xl px-4 py-6 text-sm text-slate-600 sm:px-6 lg:px-8">
+        <p>© 2026 NovaShop. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>
