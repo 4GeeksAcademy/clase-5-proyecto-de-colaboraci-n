@@ -234,40 +234,5 @@
 		</footer>
 		<!-- FIN FOOTER -->
 
-		<script>
-			const categoriaSelect = document.getElementById("categoria");
-			const tallaSelect = document.getElementById("talla");
-			const gridProductos = document.getElementById("grid-productos");
-			const conteoProductos = document.getElementById("conteo-productos");
-			const sinResultados = document.getElementById("sin-resultados");
-			const productos = Array.from(gridProductos.querySelectorAll("article"));
-
-			const filtrarProductos = () => {
-				const categoriaSeleccionada = categoriaSelect.value;
-				const tallaSeleccionada = tallaSelect.value;
-				let visibles = 0;
-
-				productos.forEach((producto) => {
-					const categoriaProducto = producto.dataset.categoria;
-					const tallasProducto = (producto.dataset.tallas || "").split(",");
-
-					const coincideCategoria = !categoriaSeleccionada || categoriaProducto === categoriaSeleccionada;
-					const coincideTalla = !tallaSeleccionada || tallasProducto.includes(tallaSeleccionada);
-
-					if (coincideCategoria && coincideTalla) {
-						producto.classList.remove("hidden");
-						visibles += 1;
-					} else {
-						producto.classList.add("hidden");
-					}
-				});
-
-				conteoProductos.textContent = `${visibles} producto${visibles === 1 ? "" : "s"} visible${visibles === 1 ? "" : "s"}`;
-				sinResultados.classList.toggle("hidden", visibles !== 0);
-			};
-
-			categoriaSelect.addEventListener("change", filtrarProductos);
-			tallaSelect.addEventListener("change", filtrarProductos);
-		</script>
 	</body>
 </html>
