@@ -6,92 +6,44 @@
     <title>Carrito | E-commerce</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="overflow-x-hidden bg-slate-50 text-slate-900 antialiased">
-    <header class="border-b border-slate-200 bg-white">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col gap-4 py-4 lg:flex-row lg:items-center lg:justify-between">
-          <a
-            href="index.html"
-            class="text-lg font-black tracking-tight text-slate-900 transition hover:text-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2"
-          >
-            NovaShop
-          </a>
+  <body class="bg-slate-50 text-slate-900 antialiased">
+    <!-- INICIO NAVBAR -->
+    <header class="fixed top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
+        <a href="#" class="shrink-0 text-lg font-extrabold tracking-tight text-slate-900">NovaShop</a>
 
-          <form action="#" role="search" class="w-full lg:max-w-md">
-            <label for="buscar-productos" class="sr-only">Buscar productos</label>
+        <div class="min-w-0 flex-1">
+          <label for="search" class="sr-only">Buscar productos</label>
+          <div class="relative">
+            <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-slate-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M9 3a6 6 0 104.472 10.02l2.754 2.754a1 1 0 001.414-1.414l-2.754-2.754A6 6 0 009 3zm-4 6a4 4 0 118 0 4 4 0 01-8 0z" clip-rule="evenodd" />
+              </svg>
+            </span>
             <input
-              id="buscar-productos"
-              name="buscar-productos"
+              id="search"
               type="search"
-              placeholder="Buscar productos"
-              class="w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2"
+              placeholder="Buscar en NovaShop"
+              class="w-full rounded-full border border-slate-300 bg-slate-100 py-2 pl-10 pr-4 text-sm placeholder:text-slate-500 focus:border-cyan-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-200"
             />
-          </form>
-
-          <nav aria-label="Navegacion principal" class="hidden lg:block">
-            <ul class="flex items-center gap-4 text-sm font-medium text-slate-700">
-              <li>
-                <a
-                  href="index.html#catalogo"
-                  class="rounded-lg px-2 py-1.5 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
-                >
-                  Catalogo
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#cuenta"
-                  class="rounded-lg px-2 py-1.5 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
-                >
-                  Cuenta
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#carrito"
-                  class="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-1.5 font-semibold text-slate-900 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
-                >
-                  Carrito
-                  <span class="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-slate-900 px-2 text-xs font-bold text-white">3</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+          </div>
         </div>
 
-        <nav aria-label="Navegacion movil" class="pb-4 lg:hidden">
-          <ul class="grid grid-cols-3 gap-2 text-sm font-medium text-slate-700">
-            <li>
-              <a
-                href="index.html#catalogo"
-                class="block rounded-lg border border-slate-200 bg-slate-100 px-3 py-2 text-center transition hover:bg-slate-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
-              >
-                Catalogo
-              </a>
-            </li>
-            <li>
-              <a
-                href="#cuenta"
-                class="block rounded-lg border border-slate-200 bg-slate-100 px-3 py-2 text-center transition hover:bg-slate-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
-              >
-                Cuenta
-              </a>
-            </li>
-            <li>
-              <a
-                href="#carrito"
-                class="flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-slate-900 px-3 py-2 text-center text-white transition hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
-              >
-                Carrito
-                <span class="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-white px-1.5 text-xs font-bold text-slate-900">3</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+        <a
+          href="#"
+          class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100"
+          aria-label="Cuenta"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10 2a4 4 0 100 8 4 4 0 000-8zM4 15a6 6 0 1112 0v1a1 1 0 11-2 0v-1a4 4 0 10-8 0v1a1 1 0 11-2 0v-1z" clip-rule="evenodd" />
+          </svg>
+          <span class="hidden sm:inline">Cuenta</span>
+        </a>
+      </nav>
     </header>
+    <!-- FIN NAVBAR -->
 
-    <main id="carrito" class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+    <main id="carrito" class="mx-auto max-w-7xl px-4 py-8 pt-20 sm:px-6 lg:px-8 lg:py-10">
       <h1 class="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">Tu carrito</h1>
       <p class="mt-2 text-sm text-slate-600">Revisa tus productos antes de completar la compra.</p>
 
@@ -270,10 +222,14 @@
                 <dt class="text-slate-600">Descuento</dt>
                 <dd class="font-medium text-emerald-700">-$0.00 MXN</dd>
               </div>
+              <div class="flex items-center justify-between">
+                <dt class="text-slate-600">Impuestos</dt>
+                <dd class="font-medium text-slate-900">$575.36 MXN</dd>
+              </div>
               <div class="border-t border-slate-200 pt-3">
                 <div class="flex items-center justify-between">
                   <dt class="text-base font-bold text-slate-900">Total</dt>
-                  <dd class="text-base font-bold text-slate-900">$3,596 MXN</dd>
+                  <dd class="text-base font-bold text-slate-900">$4,171.36 MXN</dd>
                 </div>
               </div>
             </dl>
@@ -282,66 +238,44 @@
               href="#"
               class="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2"
             >
-              Finalizar compra
+              Comprar
             </a>
           </div>
         </aside>
       </div>
     </main>
 
-    <footer id="contacto" class="mt-10 border-t border-slate-200 bg-white">
-      <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 gap-8 text-sm text-slate-600 sm:grid-cols-2 lg:grid-cols-4">
-          <section aria-labelledby="footer-marca">
-            <h2 id="footer-marca" class="text-base font-bold text-slate-900">NovaShop</h2>
-            <p class="mt-3">Moda y accesorios para uso diario con envios a todo Mexico.</p>
-          </section>
+    <!-- INICIO FOOTER -->
+    <footer class="mt-12 border-t border-slate-200 bg-white">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-2 lg:grid-cols-3 lg:px-8">
+        <section>
+          <h3 class="text-base font-bold text-slate-900">Categorias</h3>
+          <ul class="mt-3 space-y-2 text-sm text-slate-600">
+            <li><a href="#" class="hover:text-cyan-700">Calzado</a></li>
+            <li><a href="#" class="hover:text-cyan-700">Camisas</a></li>
+            <li><a href="#" class="hover:text-cyan-700">Pantalones</a></li>
+            <li><a href="#" class="hover:text-cyan-700">Accesorios</a></li>
+          </ul>
+        </section>
 
-          <section aria-labelledby="footer-categorias">
-            <h2 id="footer-categorias" class="text-base font-bold text-slate-900">Categorias</h2>
-            <ul class="mt-3 space-y-2">
-              <li><a href="index.html#catalogo" class="transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400">Calzado</a></li>
-              <li><a href="index.html#catalogo" class="transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400">Camisas</a></li>
-              <li><a href="index.html#catalogo" class="transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400">Pantalones</a></li>
-              <li><a href="index.html#catalogo" class="transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400">Accesorios</a></li>
-            </ul>
-          </section>
+        <section>
+          <h3 class="text-base font-bold text-slate-900">Legal</h3>
+          <ul class="mt-3 space-y-2 text-sm text-slate-600">
+            <li><a href="#" class="hover:text-cyan-700">Terminos y condiciones</a></li>
+            <li><a href="#" class="hover:text-cyan-700">Politica de privacidad</a></li>
+            <li><a href="#" class="hover:text-cyan-700">Sobre la marca</a></li>
+          </ul>
+        </section>
 
-          <section aria-labelledby="footer-legal">
-            <h2 id="footer-legal" class="text-base font-bold text-slate-900">Legal</h2>
-            <ul class="mt-3 space-y-2">
-              <li><a href="#" class="transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400">Terminos y condiciones</a></li>
-              <li><a href="#" class="transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400">Politica de privacidad</a></li>
-              <li><a href="#" class="transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400">Sobre la marca</a></li>
-            </ul>
-          </section>
-
-          <section aria-labelledby="footer-contacto">
-            <h2 id="footer-contacto" class="text-base font-bold text-slate-900">Contacto</h2>
-            <ul class="mt-3 space-y-2">
-              <li><a href="mailto:contacto@ecommerce.com" class="transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400">contacto@ecommerce.com</a></li>
-              <li><a href="tel:+525512345678" class="transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400">+52 55 1234 5678</a></li>
-              <li class="flex items-center gap-3 pt-1">
-                <a href="#" class="transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400">Instagram</a>
-                <a href="#" class="transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400">Facebook</a>
-                <a href="#" class="transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400">TikTok</a>
-              </li>
-            </ul>
-          </section>
-        </div>
-
-        <div class="mt-8 border-t border-slate-200 pt-4 text-sm text-slate-500">
-          <p>&copy; 2026 NovaShop. Todos los derechos reservados.</p>
-        </div>
+        <section>
+          <h3 class="text-base font-bold text-slate-900">Contacto</h3>
+          <ul class="mt-3 space-y-2 text-sm text-slate-600">
+            <li>Email: hola@novashop.com</li>
+            <li>Telefono: +1 (555) 123-4567</li>
+          </ul>
+        </section>
       </div>
     </footer>
-  </body>
-</html>        </div>
-
-        <div class="mt-8 border-t border-slate-200 pt-4 text-sm text-slate-500">
-          <p>&copy; 2026 NovaShop. Todos los derechos reservados.</p>
-        </div>
-      </div>
-    </footer>
+    <!-- FIN FOOTER -->
   </body>
 </html>
