@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Catalogo | E-commerce</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body class="bg-slate-50 text-slate-900 antialiased">
+		<!-- INICIO NAVBAR -->
+		<header class="fixed top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur">
+			<nav class="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
+				<a href="#" class="shrink-0 text-lg font-extrabold tracking-tight text-slate-900">NovaShop</a>
+
+				<div class="min-w-0 flex-1">
+					<label for="search" class="sr-only">Buscar productos</label>
+					<div class="relative">
+						<span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-slate-400">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+								<path fill-rule="evenodd" d="M9 3a6 6 0 104.472 10.02l2.754 2.754a1 1 0 001.414-1.414l-2.754-2.754A6 6 0 009 3zm-4 6a4 4 0 118 0 4 4 0 01-8 0z" clip-rule="evenodd" />
+							</svg>
+						</span>
+						<input
+							id="search"
+							type="search"
+							placeholder="Buscar en NovaShop"
+							class="w-full rounded-full border border-slate-300 bg-slate-100 py-2 pl-10 pr-4 text-sm placeholder:text-slate-500 focus:border-cyan-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-200"
+						/>
+					</div>
+				</div>
+
+				<a
+					href="#"
+					class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100"
+					aria-label="Cuenta"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+						<path fill-rule="evenodd" d="M10 2a4 4 0 100 8 4 4 0 000-8zM4 15a6 6 0 1112 0v1a1 1 0 11-2 0v-1a4 4 0 10-8 0v1a1 1 0 11-2 0v-1z" clip-rule="evenodd" />
+					</svg>
+					<span class="hidden sm:inline">Cuenta</span>
+				</a>
+			</nav>
+		</header>
+		<!-- FIN NAVBAR -->
+
+		<main class="pt-20">
+			<section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+				<header class="mb-6">
+					<h1 class="text-3xl font-black tracking-tight text-slate-900">Catalogo de Productos</h1>
+					<p class="mt-2 text-sm text-slate-600">Explora nuestro inventario y filtra por categoria o talla.</p>
+				</header>
+
+				<section aria-labelledby="filtros-titulo" class="mb-8 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+					<h2 id="filtros-titulo" class="text-sm font-bold uppercase tracking-wide text-slate-700">Filtros</h2>
+					<form class="mt-4 grid gap-4 sm:grid-cols-2" action="#" method="get">
+						<div>
+							<label for="categoria" class="mb-2 block text-sm font-semibold text-slate-700">Categoria</label>
+							<select
+								id="categoria"
+								name="categoria"
+								class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-800 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200"
+							>
+								<option value="">Todas las categorias</option>
+								<option value="calzado">Calzado</option>
+								<option value="camisas">Camisas</option>
+								<option value="pantalones">Pantalones</option>
+								<option value="accesorios">Accesorios</option>
+							</select>
+						</div>
+
+						<div>
+							<label for="talla" class="mb-2 block text-sm font-semibold text-slate-700">Talla</label>
+							<select
+								id="talla"
+								name="talla"
+								class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-800 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-200"
+							>
+								<option value="">Todas las tallas</option>
+								<option value="xs">XS</option>
+								<option value="s">S</option>
+								<option value="m">M</option>
+								<option value="l">L</option>
+								<option value="xl">XL</option>
+							</select>
+						</div>
+					</form>
+				</section>
+
+				<section aria-labelledby="listado-productos-titulo">
+					<div class="mb-4 flex items-center justify-between gap-3">
+						<h2 id="listado-productos-titulo" class="text-xl font-extrabold text-slate-900">Listado de productos</h2>
+						<p id="conteo-productos" class="text-sm text-slate-600">20 productos visibles</p>
+					</div>
+
+					<div id="grid-productos" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="calzado" data-tallas="m,l,xl">
+							<img src="https://placehold.co/320x220" alt="Producto 1" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Tenis Urban Pulse</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$79.99</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="camisas" data-tallas="s,m,l">
+							<img src="https://placehold.co/320x220" alt="Producto 2" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Camisa Linen Flow</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$44.50</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="accesorios" data-tallas="m,l">
+							<img src="https://placehold.co/320x220" alt="Producto 3" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Mochila Smart Pack</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$59.00</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="accesorios" data-tallas="s,m,l,xl">
+							<img src="https://placehold.co/320x220" alt="Producto 4" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Reloj Minimal Edge</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$99.90</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="camisas" data-tallas="m,l,xl">
+							<img src="https://placehold.co/320x220" alt="Producto 5" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Sudadera Street Core</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$64.99</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="pantalones" data-tallas="s,m,l,xl">
+							<img src="https://placehold.co/320x220" alt="Producto 6" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Pantalon Cargo Flex</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$52.00</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="accesorios" data-tallas="s,m,l">
+							<img src="https://placehold.co/320x220" alt="Producto 7" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Gorra Neo Classic</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$24.90</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="accesorios" data-tallas="s,m,l,xl">
+							<img src="https://placehold.co/320x220" alt="Producto 8" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Audifonos Sound Go</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$88.75</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="calzado" data-tallas="m,l,xl">
+							<img src="https://placehold.co/320x220" alt="Producto 9" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Zapatos Motion Run</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$69.30</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="camisas" data-tallas="xs,s,m,l,xl">
+							<img src="https://placehold.co/320x220" alt="Producto 10" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Camiseta Basic Mood</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$19.99</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="camisas" data-tallas="m,l,xl">
+							<img src="https://placehold.co/320x220" alt="Producto 11" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Blazer City Line</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$110.00</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="accesorios" data-tallas="s,m,l,xl">
+							<img src="https://placehold.co/320x220" alt="Producto 12" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Bolso Daily Soft</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$47.40</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="calzado" data-tallas="m,l,xl">
+							<img src="https://placehold.co/320x220" alt="Producto 13" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Bota Trail North</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$95.20</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="pantalones" data-tallas="xs,s,m,l">
+							<img src="https://placehold.co/320x220" alt="Producto 14" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Short Summer Air</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$28.60</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="camisas" data-tallas="m,l,xl">
+							<img src="https://placehold.co/320x220" alt="Producto 15" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Chaleco Urban Vest</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$54.00</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="pantalones" data-tallas="xs,s,m,l">
+							<img src="https://placehold.co/320x220" alt="Producto 16" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Falda Soft Pleat</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$36.90</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="accesorios" data-tallas="s,m,l,xl">
+							<img src="https://placehold.co/320x220" alt="Producto 17" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Cinturon Prime Buckle</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$22.50</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="accesorios" data-tallas="s,m,l">
+							<img src="https://placehold.co/320x220" alt="Producto 18" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Gafas Solar Beam</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$31.80</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="accesorios" data-tallas="m,l,xl">
+							<img src="https://placehold.co/320x220" alt="Producto 19" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Bufanda Warm Touch</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$18.40</p>
+						</article>
+						<article class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm" data-categoria="accesorios" data-tallas="s,m,l,xl">
+							<img src="https://placehold.co/320x220" alt="Producto 20" class="h-40 w-full rounded-xl object-cover" />
+							<h3 class="mt-3 text-sm font-semibold text-slate-800">Guantes Flex Grip</h3>
+							<p class="mt-1 text-base font-extrabold text-slate-900">$26.70</p>
+						</article>
+					</div>
+					<p id="sin-resultados" class="mt-4 hidden rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+						No hay productos que coincidan con los filtros seleccionados.
+					</p>
+				</section>
+			</section>
+		</main>
+
+		<!-- INICIO FOOTER -->
+		<footer class="mt-12 border-t border-slate-200 bg-white">
+			<div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-2 lg:grid-cols-3 lg:px-8">
+				<section>
+					<h3 class="text-base font-bold text-slate-900">Categorias</h3>
+					<ul class="mt-3 space-y-2 text-sm text-slate-600">
+						<li><a href="#" class="hover:text-cyan-700">Calzado</a></li>
+						<li><a href="#" class="hover:text-cyan-700">Camisas</a></li>
+						<li><a href="#" class="hover:text-cyan-700">Pantalones</a></li>
+						<li><a href="#" class="hover:text-cyan-700">Accesorios</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3 class="text-base font-bold text-slate-900">Legal</h3>
+					<ul class="mt-3 space-y-2 text-sm text-slate-600">
+						<li><a href="#" class="hover:text-cyan-700">Terminos y condiciones</a></li>
+						<li><a href="#" class="hover:text-cyan-700">Politica de privacidad</a></li>
+						<li><a href="#" class="hover:text-cyan-700">Sobre la marca</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3 class="text-base font-bold text-slate-900">Contacto</h3>
+					<ul class="mt-3 space-y-2 text-sm text-slate-600">
+						<li>Email: hola@novashop.com</li>
+						<li>Telefono: +1 (555) 123-4567</li>
+					</ul>
+				</section>
+			</div>
+		</footer>
+		<!-- FIN FOOTER -->
+
+		<script>
+			const categoriaSelect = document.getElementById("categoria");
+			const tallaSelect = document.getElementById("talla");
+			const gridProductos = document.getElementById("grid-productos");
+			const conteoProductos = document.getElementById("conteo-productos");
+			const sinResultados = document.getElementById("sin-resultados");
+			const productos = Array.from(gridProductos.querySelectorAll("article"));
+
+			const filtrarProductos = () => {
+				const categoriaSeleccionada = categoriaSelect.value;
+				const tallaSeleccionada = tallaSelect.value;
+				let visibles = 0;
+
+				productos.forEach((producto) => {
+					const categoriaProducto = producto.dataset.categoria;
+					const tallasProducto = (producto.dataset.tallas || "").split(",");
+
+					const coincideCategoria = !categoriaSeleccionada || categoriaProducto === categoriaSeleccionada;
+					const coincideTalla = !tallaSeleccionada || tallasProducto.includes(tallaSeleccionada);
+
+					if (coincideCategoria && coincideTalla) {
+						producto.classList.remove("hidden");
+						visibles += 1;
+					} else {
+						producto.classList.add("hidden");
+					}
+				});
+
+				conteoProductos.textContent = `${visibles} producto${visibles === 1 ? "" : "s"} visible${visibles === 1 ? "" : "s"}`;
+				sinResultados.classList.toggle("hidden", visibles !== 0);
+			};
+
+			categoriaSelect.addEventListener("change", filtrarProductos);
+			tallaSelect.addEventListener("change", filtrarProductos);
+		</script>
+	</body>
+</html>
