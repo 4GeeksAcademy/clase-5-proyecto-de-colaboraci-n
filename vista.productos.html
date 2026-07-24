@@ -5,6 +5,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Vista de Producto | E-commerce</title>
 		<script src="https://cdn.tailwindcss.com"></script>
+		<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Chaqueta Urban Shield",
+  "image": "https://placehold.co/600x800",
+  "description": "Ideal para climas frescos, salidas casuales y jornadas urbanas.",
+  "sku": "USH-2048-BLK",
+  "offers": {
+    "@type": "Offer",
+    "url": "http://localhost/producto.html",
+    "priceCurrency": "USD",
+    "price": "89.99",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
 	</head>
 	<body class="bg-slate-50 text-slate-900 antialiased">
 		<!-- INICIO NAVBAR -->
@@ -80,12 +98,12 @@
 							/>
 						</div>
 
-						<button
-							type="button"
-							class="mt-8 w-full rounded-xl bg-cyan-600 px-6 py-3 text-base font-extrabold text-white transition hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2"
-						>
-							Agregar al carrito
-						</button>
+						<a
+                          href="carrito.html"
+                        class="mt-8 flex w-full justify-center rounded-xl bg-cyan-600 px-6 py-3 text-base font-extrabold text-white transition hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2"
+                        >
+                        Agregar al carrito
+                    </a>
 					</div>
 				</div>
 
